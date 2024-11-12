@@ -2,6 +2,7 @@ import { Separator } from '@/components/ui/separator';
 import DesktopSidebar from '@/components/DesktopSidebar';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader';
 import { ModeToggle } from '@/components/ThemeModeToggle';
+import { SignedIn, UserButton } from '@clerk/nextjs';
 
 export default function DashboardLayout({
   children,
@@ -16,6 +17,9 @@ export default function DashboardLayout({
           <BreadcrumbHeader />
           <div className="gap-1 flex items-center">
             <ModeToggle />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </header>
         <Separator />
